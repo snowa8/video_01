@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузить видео</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #343a40; /* Темно-серый фон */
+        }
+
+        .card {
+            border: border-dark;
+        }
+
+.btn-submit {
+    background-color: #000000; /* Черный фон */
+    color: white; /* Белый текст */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.btn-submit:hover {
+    background-color: #111111; /* Тёмно-серый при наведении */
+}
+
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<a href="http://127.0.0.1:8000/"><button class="btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M226.67-186.67h140v-246.66h226.66v246.66h140v-380L480-756.67l-253.33 190v380ZM160-120v-480l320-240 320 240v480H526.67v-246.67h-93.34V-120H160Zm320-352Z"/></svg></button></a>
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-1" id="profile-wrapper">
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1>Загрузить новое видео</h1>
+                <hr>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                    <button type="submit" class="btn-submit">Загрузить</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
